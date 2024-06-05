@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Here is project for NFactorial Incubator
 
-## Getting Started
+Music Search App - это веб-приложение, которое позволяет пользователям искать треки и исполнителей с помощью API Deezer. Пользователи могут вводить поисковый запрос, после чего приложение отображает результаты поиска в виде списка треков и исполнителей с соответствующей информацией, такой как обложка альбома, название трека и имя исполнителя. Пользователи также могут просматривать более подробную информацию о выбранном треке или исполнителе во всплывающем боковом окне.
 
-First, run the development server:
+Функциональность
+- Поиск треков и исполнителей по запросу пользователя.
+- Отображение результатов поиска в виде списка с информацией о треках и исполнителях.
+- Подробная информация о выбранном треке или исполнителе.
+- Воспроизведение превью аудио для выбранных треков.
+- Возможность закрыть всплывающее боковое окно.
 
-```bash
+Установка
+Клонируйте репозиторий на свой компьютер:
+```
+git clone https://github.com/your-username/music-search-app.git
+```
+Перейдите в каталог проекта:
+```
+cd music-search-app
+```
+Установите зависимости:
+```
+npm install
+```
+Установите зависимости:
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Использование
+- Откройте браузер и перейдите по адресу http://localhost:3000.
+- Введите поисковый запрос в поле ввода и нажмите Enter.
+- Просматривайте результаты поиска и выбирайте интересующие треки или исполнителей.
+- Дополнительная информация о выбранном треке или исполнителе будет отображаться во всплывающем боковом окне.
+- Для закрытия бокового окна нажмите на область вне окна или используйте кнопку закрытия.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Данный проект был сделан с техрологиями
+`Nextjs` `React` `TypeScript` `Swiper` `Tailwind CSS` 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
