@@ -110,7 +110,7 @@ const Home: React.FC = () => {
   }, [selectedRadio]);
 
   return (
-    <div className="container">
+    <div className="px-10">
       <div className="main-content">
         {loading && <div>Loading...</div>}
         {radio && (
@@ -134,19 +134,19 @@ const Home: React.FC = () => {
             <div className='overflow-y-scroll grid grid-cols-3 gap-6  max-h-[60vh]  '>
               {tracks?.map((track: any, index: number) => (
                 <div key={index}>
-                  <img onClick={() => handleSongClick(track.id)} src={track.album.cover_xl} alt="image" />
-                  <h3 onClick={() => handleSongClick(track.id)}>{track.title}</h3>
-                  <p onClick={() => handleSongClick(track.id)} className='text-sm text-gray-400'>{track.artist.name}</p>
+                  <img  className='cursor-pointer rounded-2xl' onClick={() => handleSongClick(track.id)} src={track.album.cover_xl} alt="image" />
+                  <h3  className='cursor-pointer' onClick={() => handleSongClick(track.id)}>{track.title}</h3>
+                  <p onClick={() => handleSongClick(track.id)} className='text-sm text-gray-400 cursor-pointer'>{track.artist.name}</p>
                 </div>
               ))}
             </div>
           </Modal>
         )}
         {artistInfo && (
-          <Sidebar artistInfo={artistInfo} />
+          <Sidebar artistInfo={artistInfo} onClose={()=>setArtistInfo(null)} />
         )}
         {songInfo && (
-          <Sidebar songInfo={songInfo} />
+          <Sidebar songInfo={songInfo} onClose={()=>setSongInfo(null)} />
         )}
       </div>
       <Search></Search>

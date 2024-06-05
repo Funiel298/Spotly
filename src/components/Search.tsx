@@ -1,7 +1,57 @@
+'use client'
+import React, { useState } from 'react';
+
 export default function Search(){
-    return(
-        <div id="search" className="p-5">
-            <input type="text" className="w-screen"/>
-        </div>
-    )
-}
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [searchResults, setSearchResults] = useState<any[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSearch = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const term = event.target.value;
+    setSearchTerm(term);
+    setLoading(true);
+
+    try {
+      const response = await fetch(`https://api.deezer.com/search?q=${term}`, {
+        headers: {
+          'x-rapidapi-key': '865c712ecbmshb8b2fdbff62a03dp14dc2bjsn3e75f4400b65',
+          'x-rapidapi-host': 'deezerdevs-deezer.p.rapidapi.com'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch search results');
+      }
+
+      const data = await response.json();
+      setSearchResults(data.data);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div id="search" className="p-5">
+      <input
+        type="text"
+        className="w-screen mb-3 p-2 border border-gray-300 rounded"
+        placeholder="Search tracks and artists..."
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+      {loading && <div>Loading...</div>}
+      <div className='grid grid-cols-3 gap-6'>
+        {searchResults?.map((result: any) => (
+          <div key={result.id}>
+            <img className='rounded-2xl' src={result.album.cover_big} alt="" />
+            <h3>{result.title}</h3>
+            <p className='text-gray-400 text-sm'>{result.artist.name}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
