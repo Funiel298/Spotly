@@ -112,6 +112,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="px-10 overflow-x-hidden">
+      <Search></Search>
       <div className="main-content">
         {loading && <FaCompactDisc className="animate-spin h-8 w-8 mx-auto" />}
         {radio && (
@@ -150,7 +151,7 @@ const Home: React.FC = () => {
           <Sidebar songInfo={songInfo} onClose={()=>setSongInfo(null)} />
         )}
       </div>
-      <Search></Search>
+      
     </div>
   );
 };

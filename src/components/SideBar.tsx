@@ -26,21 +26,21 @@ const SideBar: React.FC<{ artistInfo?: any; songInfo?: any; onClose: () => void 
           {songInfo && (
             <div>
                 <h3 className="text-lg font-semibold mb-2">{songInfo.title}</h3>
-                <p className="text-gray-600 mb-2">Duration: {songInfo.duration} seconds</p>
-                <p className="text-gray-600 mb-2">Release Date: {songInfo.release_date}</p>
-                <p className="text-gray-600 mb-2">Rank: {songInfo.rank}</p>
-                <p className="text-gray-600 mb-2">Explicit Lyrics: {songInfo.explicit_lyrics ? 'Yes' : 'No'}</p>
+                <p className="text-gray-600 mb-2">Duration: {songInfo?.duration} seconds</p>
+                <p className="text-gray-600 mb-2">Release Date: {songInfo?.release_date}</p>
+                <p className="text-gray-600 mb-2">Rank: {songInfo?.rank}</p>
+                <p className="text-gray-600 mb-2">Explicit Lyrics: {songInfo?.explicit_lyrics ? 'Yes' : 'No'}</p>
                 {songInfo.preview && (
                     <audio controls className="mb-2">
-                    <source src={songInfo.preview} type="audio/mpeg" />
+                    <source src={songInfo?.preview} type="audio/mpeg" />
                     Your browser does not support the audio element.
                     </audio>
                 )}
                 {songInfo.album && (
                     <div className="mt-2">
                     <h4 className="text-sm font-semibold mb-1">Album:</h4>
-                    <p className="text-gray-600">{songInfo.album.title}</p>
-                    <img src={songInfo.album.cover_medium} alt={songInfo.album.title} className="w-full rounded-xl mt-2" />
+                    <p className="text-gray-600">{songInfo?.album?.title}</p>
+                    <img src={songInfo?.album?.cover_medium} alt={songInfo?.album?.title} className="w-full rounded-xl mt-2" />
                     </div>
                 )}
             </div>
