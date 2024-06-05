@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react';
+import { FaCompactDisc } from 'react-icons/fa';
 
 export default function Search(){
   const [searchTerm, setSearchTerm] = useState<string>('');
@@ -41,7 +42,7 @@ export default function Search(){
         value={searchTerm}
         onChange={handleSearch}
       />
-      {loading && <div>Loading...</div>}
+      {loading && <FaCompactDisc className="animate-spin h-8 w-8 mx-auto" />}
       <div className='grid grid-cols-3 gap-6'>
         {searchResults?.map((result: any) => (
           <div key={result.id}>

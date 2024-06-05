@@ -4,6 +4,7 @@ import MusicSwiper from '@/components/Swiper';
 import Modal from '@/components/Modal';
 import Sidebar from '@/components/SideBar'; 
 import Search from '@/components/Search';
+import { FaCompactDisc } from "react-icons/fa";
 
 const Home: React.FC = () => {
   const [radio, setRadio] = useState<any>(null);
@@ -110,9 +111,9 @@ const Home: React.FC = () => {
   }, [selectedRadio]);
 
   return (
-    <div className="px-10">
+    <div className="px-10 overflow-x-hidden">
       <div className="main-content">
-        {loading && <div>Loading...</div>}
+        {loading && <FaCompactDisc className="animate-spin h-8 w-8 mx-auto" />}
         {radio && (
           <div className="radio-swiper">
             <MusicSwiper

@@ -13,7 +13,7 @@ const MusicSwiper: React.FC<MusicSwiperProps> = ({ title, items }) => {
   return (
     <div className="my-8">
       <h2 className="text-2xl font-bold mb-4">{title}</h2>
-      <Swiper spaceBetween={10} slidesPerView={5} navigation modules={[Navigation]}>
+      <Swiper spaceBetween={10} slidesPerView={5} navigation={true} modules={[Navigation]}>
         {items?.map((item, index) => (
           <SwiperSlide key={index}>
             <div onClick={item.action} className="p-4 bg-gray-100 rounded-lg shadow-lg">
